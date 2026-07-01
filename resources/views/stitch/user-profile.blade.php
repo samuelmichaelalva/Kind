@@ -184,40 +184,40 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant">Kindness in Action</p>
 </div>
 <div class="flex flex-col gap-2 px-base flex-1 overflow-y-auto">
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all" href="{{ route('dashboard') }}">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
 <span class="font-body-sm text-body-sm">Overview</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all" href="{{ route('notifications') }}">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
 <span class="font-body-sm text-body-sm">Activity</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all" href="{{ route('create-post') }}">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">handshake</span>
 <span class="font-body-sm text-body-sm">My Requests</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all" href="{{ route('browse-donations') }}">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">volunteer_activism</span>
 <span class="font-body-sm text-body-sm">My Donations</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all" href="{{ route('volunteer-hub') }}">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">groups</span>
 <span class="font-body-sm text-body-sm">Volunteering</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all" href="{{ route('messages') }}">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">bookmark</span>
 <span class="font-body-sm text-body-sm">Saved</span>
 </a>
 <!-- Active Tab: Profile/Settings -->
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-semibold rounded-lg scale-95 transition-transform" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-semibold rounded-lg scale-95 transition-transform" href="{{ route('user-profile') }}">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
 <span class="font-body-sm text-body-sm">Settings</span>
 </a>
 </div>
 <div class="px-base mt-auto mb-stack-md">
-<button class="w-full bg-gradient-to-r from-primary to-tertiary text-on-primary font-body-sm text-body-sm py-3 rounded-[12px] shadow-sm hover:opacity-90 transition-opacity">
+<a class="w-full bg-gradient-to-r from-primary to-tertiary text-on-primary font-body-sm text-body-sm py-3 rounded-[12px] shadow-sm hover:opacity-90 transition-opacity block text-center" href="{{ route('create-post') }}">
                 New Request
-            </button>
+            </a>
 </div>
 </nav>
 <!-- Main Content Area -->
@@ -234,11 +234,11 @@
 </div>
 <!-- Navigation Links (Hidden on Mobile) -->
 <div class="hidden md:flex flex-1 justify-center items-center gap-8 h-full">
-<a class="h-full flex items-center text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Home</a>
-<a class="h-full flex items-center text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Requests</a>
-<a class="h-full flex items-center text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Donations</a>
-<a class="h-full flex items-center text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Volunteer</a>
-<a class="h-full flex items-center text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">NGOs</a>
+<a class="h-full flex items-center text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="{{ route('dashboard') }}">Home</a>
+<a class="h-full flex items-center text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="{{ route('create-post') }}">Requests</a>
+<a class="h-full flex items-center text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="{{ route('browse-donations') }}">Donations</a>
+<a class="h-full flex items-center text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="{{ route('volunteer-hub') }}">Volunteer</a>
+<a class="h-full flex items-center text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="{{ route('ngo-directory') }}">NGOs</a>
 </div>
 <!-- Trailing Icons -->
 <div class="flex items-center gap-4">

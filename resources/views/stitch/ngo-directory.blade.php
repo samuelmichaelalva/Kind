@@ -214,11 +214,11 @@
 <div class="flex items-center gap-stack-md">
 <span class="font-display-lg text-headline-lg font-bold text-primary">Kind</span>
 <div class="hidden md:flex gap-gutter items-center">
-<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
-<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Requests</a>
-<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Donations</a>
-<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Volunteer</a>
-<a class="font-body-lg text-body-lg text-primary font-semibold border-b-2 border-primary" href="#">NGOs</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="{{ route('dashboard') }}">Home</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="{{ route('create-post') }}">Requests</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="{{ route('browse-donations') }}">Donations</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="{{ route('volunteer-hub') }}">Volunteer</a>
+<a class="font-body-lg text-body-lg text-primary font-semibold border-b-2 border-primary" href="{{ route('ngo-directory') }}">NGOs</a>
 </div>
 </div>
 <div class="flex items-center gap-base">
@@ -236,19 +236,19 @@
 </nav>
 <!-- SideNavBar (Mobile / Tablet Layout adaptation) -->
 <div class="md:hidden fixed bottom-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-t border-white/10 flex justify-around p-base shadow-[0_-4px_20px_rgba(0,0,0,0.05)] pb-safe">
-<a class="flex flex-col items-center p-2 text-on-surface-variant" href="#">
+<a class="flex flex-col items-center p-2 text-on-surface-variant" href="{{ route('dashboard') }}">
 <span class="material-symbols-outlined">home</span>
 <span class="font-body-sm text-[10px] mt-1">Home</span>
 </a>
-<a class="flex flex-col items-center p-2 text-primary" href="#">
+<a class="flex flex-col items-center p-2 text-primary" href="{{ route('ngo-directory') }}">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
 <span class="font-body-sm text-[10px] mt-1 font-semibold">NGOs</span>
 </a>
-<a class="flex flex-col items-center p-2 text-on-surface-variant" href="#">
+<a class="flex flex-col items-center p-2 text-on-surface-variant" href="{{ route('browse-donations') }}">
 <span class="material-symbols-outlined">volunteer_activism</span>
 <span class="font-body-sm text-[10px] mt-1">Donate</span>
 </a>
-<a class="flex flex-col items-center p-2 text-on-surface-variant" href="#">
+<a class="flex flex-col items-center p-2 text-on-surface-variant" href="{{ route('user-profile') }}">
 <span class="material-symbols-outlined">person</span>
 <span class="font-body-sm text-[10px] mt-1">Profile</span>
 </a>

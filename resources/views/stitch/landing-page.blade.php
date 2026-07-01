@@ -181,22 +181,22 @@
 <!-- Top Navigation -->
 <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-container-padding h-16 bg-surface/70 backdrop-blur-xl border-b border-white/10 shadow-sm transition-all duration-300" id="main-nav">
 <div class="flex items-center gap-8">
-<a class="font-display-lg text-[24px] font-bold text-primary tracking-tight" href="#">Kind</a>
+<a class="font-display-lg text-[24px] font-bold text-primary tracking-tight" href="{{ route('landing-page') }}">Kind</a>
 <div class="hidden md:flex items-center gap-6">
-<a class="text-primary font-semibold border-b-2 border-primary pb-1 font-body-lg text-body-lg Active: opacity-80 transition-all" href="#">Home</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 font-body-lg text-body-lg" href="#">Requests</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 font-body-lg text-body-lg" href="#">Donations</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 font-body-lg text-body-lg" href="#">Volunteer</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 font-body-lg text-body-lg" href="#">NGOs</a>
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 font-body-lg text-body-lg Active: opacity-80 transition-all" href="{{ route('landing-page') }}">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 font-body-lg text-body-lg" href="{{ route('create-post') }}">Requests</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 font-body-lg text-body-lg" href="{{ route('browse-donations') }}">Donations</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 font-body-lg text-body-lg" href="{{ route('volunteer-hub') }}">Volunteer</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 font-body-lg text-body-lg" href="{{ route('ngo-directory') }}">NGOs</a>
 </div>
 </div>
 <div class="flex items-center gap-4">
-<button aria-label="Mail" class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full">
+<a aria-label="Mail" class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full" href="{{ route('messages') }}">
 <span class="material-symbols-outlined">mail</span>
-</button>
-<button aria-label="Notifications" class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full">
+</a>
+<a aria-label="Notifications" class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full" href="{{ route('notifications') }}">
 <span class="material-symbols-outlined">notifications</span>
-</button>
+</a>
 <img alt="User profile with active status" class="w-8 h-8 rounded-full border border-outline-variant object-cover ml-2" data-alt="A clean, professional portrait of an adult volunteer smiling gently in bright, natural daylight. The photo is composed tightly on the face with a shallow depth of field, blurring out a modern, minimalist background with a subtle primary blue tint to match the site's styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAitXdPFCiVTWq0fTxDsER84O15zOhbn8JyBJD1Uwp4i1wIBzjARGqd7PxoAtG5t1vw9J5xNOiqre_JRbFOshHadebfcpPkt5SwQUAf_iZA1wrc99SdfmyMQhZ96XmZ0ujOBefXVN995DFlf0Vy-CER1flDoZ0CoTgtLr5HnOo5U9JIcUx9nwOcKJQ2or07SML4ZjuPtzLHmyTy2Cde82xp5D0AAcDvB-vMn5q8_DZ4BhLtxuoFOAB_y9Iui7U5WaBanYqqxnIcA"/>
 </div>
 </nav>
@@ -217,13 +217,13 @@
                     A beautifully engineered mutual aid network. Connect with your local community to offer support, request help, and organize resources with unprecedented clarity and ease.
                 </p>
 <div class="flex flex-col sm:flex-row gap-4 mt-stack-md">
-<button class="bg-gradient-to-r from-primary to-tertiary text-on-primary font-title-md text-title-md px-8 py-4 rounded-xl shadow-[0_8px_30px_rgb(0,88,188,0.2)] hover:shadow-[0_8px_30px_rgb(0,88,188,0.4)] hover:-translate-y-0.5 transition-all duration-300">
+<a class="bg-gradient-to-r from-primary to-tertiary text-on-primary font-title-md text-title-md px-8 py-4 rounded-xl shadow-[0_8px_30px_rgb(0,88,188,0.2)] hover:shadow-[0_8px_30px_rgb(0,88,188,0.4)] hover:-translate-y-0.5 transition-all duration-300" href="{{ route('register') }}">
                         Get Started
-                    </button>
-<button class="glass-panel text-on-surface font-title-md text-title-md px-8 py-4 rounded-xl hover:bg-surface-variant/50 transition-all duration-300 flex items-center justify-center gap-2">
+                    </a>
+<a class="glass-panel text-on-surface font-title-md text-title-md px-8 py-4 rounded-xl hover:bg-surface-variant/50 transition-all duration-300 flex items-center justify-center gap-2" href="{{ route('browse-donations') }}">
                         Explore Network
                         <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
-</button>
+</a>
 </div>
 </div>
 </section>
@@ -309,9 +309,9 @@
 <div class="relative z-10 flex flex-col items-center">
 <h2 class="font-display-lg text-display-lg text-on-surface mb-4">Ready to step up?</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg">Join thousands of others building stronger, more resilient communities through localized mutual aid.</p>
-<button class="bg-primary text-on-primary font-title-md text-title-md px-10 py-4 rounded-xl shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all">
+<a class="bg-primary text-on-primary font-title-md text-title-md px-10 py-4 rounded-xl shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all" href="{{ route('register') }}">
                         Create an Account
-                    </button>
+                    </a>
 </div>
 </div>
 </section>
@@ -320,7 +320,7 @@
 <footer class="bg-surface-container-low border-t border-outline-variant/20 pt-16 pb-8 px-container-padding mt-24">
 <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 <div class="col-span-1 md:col-span-1">
-<a class="font-display-lg text-[24px] font-bold text-primary tracking-tight mb-4 block" href="#">Kind</a>
+<a class="font-display-lg text-[24px] font-bold text-primary tracking-tight mb-4 block" href="{{ route('landing-page') }}">Kind</a>
 <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
                     Building resilient communities through technology and mutual aid.
                 </p>
@@ -328,34 +328,34 @@
 <div>
 <h4 class="font-label-caps text-label-caps text-on-surface mb-4">Platform</h4>
 <ul class="space-y-3">
-<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">How it Works</a></li>
-<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a></li>
-<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">For NGOs</a></li>
-<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Security</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="{{ route('create-post') }}">How it Works</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="{{ route('browse-donations') }}">Pricing</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="{{ route('ngo-directory') }}">For NGOs</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="{{ route('register') }}">Security</a></li>
 </ul>
 </div>
 <div>
 <h4 class="font-label-caps text-label-caps text-on-surface mb-4">Resources</h4>
 <ul class="space-y-3">
-<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Community Guide</a></li>
-<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Help Center</a></li>
-<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Blog</a></li>
-<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">API Docs</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="{{ route('dashboard') }}">Community Guide</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="{{ route('messages') }}">Help Center</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="{{ route('notifications') }}">Blog</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="{{ route('landing-page') }}">API Docs</a></li>
 </ul>
 </div>
 <div>
 <h4 class="font-label-caps text-label-caps text-on-surface mb-4">Legal</h4>
 <ul class="space-y-3">
-<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
-<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="{{ route('landing-page') }}">Privacy Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="{{ route('landing-page') }}">Terms of Service</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="{{ route('landing-page') }}">Cookie Policy</a></li>
 </ul>
 </div>
 </div>
 <div class="max-w-7xl mx-auto pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-4">
 <p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Kind Community Platform. All rights reserved.</p>
 <div class="flex items-center gap-4">
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">public</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="{{ route('landing-page') }}"><span class="material-symbols-outlined text-[20px]">public</span></a>
 </div>
 </div>
 </footer>

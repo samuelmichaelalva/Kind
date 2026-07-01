@@ -16,7 +16,13 @@ $publicPages = [
 ];
 
 foreach ($publicPages as $uri => $view) {
-    Route::view($uri, $view);
+    $route = Route::view($uri, $view);
+
+    if ($uri === 'landing-page') {
+        $route->name('landing-page');
+    } elseif ($uri === 'browse-donations') {
+        $route->name('browse-donations');
+    }
 }
 
 Route::middleware('guest')->group(function () {
@@ -65,6 +71,22 @@ Route::middleware('auth')->group(function () {
 
             if ($uri === 'home-feed') {
                 $route->name('dashboard');
+            } elseif ($uri === 'create-post') {
+                $route->name('create-post');
+            } elseif ($uri === 'messages') {
+                $route->name('messages');
+            } elseif ($uri === 'notifications') {
+                $route->name('notifications');
+            } elseif ($uri === 'ngo-directory') {
+                $route->name('ngo-directory');
+            } elseif ($uri === 'volunteer-hub') {
+                $route->name('volunteer-hub');
+            } elseif ($uri === 'user-dashboard') {
+                $route->name('user-dashboard');
+            } elseif ($uri === 'user-profile') {
+                $route->name('user-profile');
+            } elseif ($uri === 'admin-dashboard') {
+                $route->name('admin-dashboard');
             } else {
                 $route->name(str_replace('-', '.', $uri));
             }

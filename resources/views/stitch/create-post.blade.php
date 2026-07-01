@@ -203,42 +203,42 @@
 <!-- Navigation Links -->
 <!-- Logic: Create Post intent maps closest to "New Request" CTA, active state might not apply perfectly to generic tabs. We will highlight "My Requests" as a fallback intent for generating a new one, or leave them inactive to focus on the task. Let's make "My Requests" active as the closest intent. -->
 <nav class="flex-1 flex flex-col gap-2 px-2 overflow-y-auto no-scrollbar">
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="{{ route('dashboard') }}">
 <span class="material-symbols-outlined">dashboard</span>
 <span>Overview</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="{{ route('notifications') }}">
 <span class="material-symbols-outlined">analytics</span>
 <span>Activity</span>
 </a>
 <!-- Active State -->
-<a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary font-semibold rounded-lg font-body-sm text-body-sm scale-95 transition-transform" href="#">
+<a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary font-semibold rounded-lg font-body-sm text-body-sm scale-95 transition-transform" href="{{ route('create-post') }}">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">handshake</span>
 <span>My Requests</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="{{ route('browse-donations') }}">
 <span class="material-symbols-outlined">volunteer_activism</span>
 <span>My Donations</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="{{ route('volunteer-hub') }}">
 <span class="material-symbols-outlined">groups</span>
 <span>Volunteering</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="{{ route('messages') }}">
 <span class="material-symbols-outlined">bookmark</span>
 <span>Saved</span>
 </a>
 </nav>
 <div class="mt-auto px-2 pb-4">
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm mb-4" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm mb-4" href="{{ route('user-profile') }}">
 <span class="material-symbols-outlined">settings</span>
 <span>Settings</span>
 </a>
 <!-- CTA Button -->
-<button class="w-full bg-gradient-to-r from-primary to-tertiary text-white rounded-xl py-3 px-4 font-body-sm text-body-sm font-semibold shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<a class="w-full bg-gradient-to-r from-primary to-tertiary text-white rounded-xl py-3 px-4 font-body-sm text-body-sm font-semibold shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2" href="{{ route('create-post') }}">
 <span class="material-symbols-outlined">add</span>
                 New Request
-            </button>
+            </a>
 </div>
 </aside>
 <!-- Main Content Area -->

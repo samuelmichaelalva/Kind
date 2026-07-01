@@ -136,19 +136,19 @@
 </div>
 </div>
 <ul class="hidden md:flex items-center gap-stack-md font-body-lg text-body-lg">
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Requests</a></li>
-<li><a class="text-primary font-semibold border-b-2 border-primary pb-5 pt-5 opacity-80 transition-all" href="#">Donations</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Volunteer</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">NGOs</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="{{ route('dashboard') }}">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="{{ route('create-post') }}">Requests</a></li>
+<li><a class="text-primary font-semibold border-b-2 border-primary pb-5 pt-5 opacity-80 transition-all" href="{{ route('browse-donations') }}">Donations</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="{{ route('volunteer-hub') }}">Volunteer</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="{{ route('ngo-directory') }}">NGOs</a></li>
 </ul>
 <div class="flex items-center gap-stack-sm">
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<a class="p-2 text-on-surface-variant hover:text-primary transition-colors" href="{{ route('messages') }}">
 <span class="material-symbols-outlined" data-icon="mail">mail</span>
-</button>
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+</a>
+<a class="p-2 text-on-surface-variant hover:text-primary transition-colors" href="{{ route('notifications') }}">
 <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
+</a>
 <img alt="User profile with active status" class="w-8 h-8 rounded-full border border-outline-variant/30 object-cover" data-alt="A small, circular avatar image showing a young, friendly woman with short brown hair smiling warmly. She is in a well-lit, minimal studio environment with a soft, out-of-focus background. High quality photography, modern style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKlhuBEdTkTKDLSSJdarKrCBXl2BDE2kdJONYn43bQ_4cD2E5juDwBvvrIANXwuRhAdPAIUGNgwU_26sYEks2eDlhAP6iY7IbAeuijKY9esE2zoRDM93Egw4Y4Vb0fsC9hB7p0-ZUcxtGwUmnjKYwS8lu8I3hauXkdlwv2eGw6frzxG-Md5ZTcm0xH42l2CYLwyEBB44H4xzSjLJnglY7ixwRZYCOnuYdDv-A1A6_SJ4x83jqIGTPk6exQ0EUTWMTarghqfh6qWw"/>
 </div>
 </nav>
@@ -160,32 +160,32 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant">Kindness in Action</p>
 </div>
 <nav class="flex-1 flex flex-col gap-1 font-body-sm text-body-sm text-primary">
-<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg" href="#">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg" href="{{ route('dashboard') }}">
 <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Overview
                 </a>
-<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg" href="#">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg" href="{{ route('notifications') }}">
 <span class="material-symbols-outlined" data-icon="analytics">analytics</span> Activity
                 </a>
-<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg" href="#">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg" href="{{ route('create-post') }}">
 <span class="material-symbols-outlined" data-icon="handshake">handshake</span> My Requests
                 </a>
-<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary font-semibold rounded-lg scale-95 transition-transform" href="#">
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary font-semibold rounded-lg scale-95 transition-transform" href="{{ route('browse-donations') }}">
 <span class="material-symbols-outlined fill" data-icon="volunteer_activism">volunteer_activism</span> My Donations
                 </a>
-<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg" href="#">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg" href="{{ route('volunteer-hub') }}">
 <span class="material-symbols-outlined" data-icon="groups">groups</span> Volunteering
                 </a>
-<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg" href="#">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg" href="{{ route('messages') }}">
 <span class="material-symbols-outlined" data-icon="bookmark">bookmark</span> Saved
                 </a>
-<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mt-auto" href="#">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mt-auto" href="{{ route('user-profile') }}">
 <span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
                 </a>
 </nav>
 <div class="mt-4 p-3">
-<button class="w-full py-2 bg-gradient-to-r from-primary to-tertiary text-on-primary rounded-lg font-body-sm text-body-sm font-semibold hover:shadow-md transition-shadow">
+<a class="w-full py-2 bg-gradient-to-r from-primary to-tertiary text-on-primary rounded-lg font-body-sm text-body-sm font-semibold hover:shadow-md transition-shadow block text-center" href="{{ route('create-post') }}">
                     New Request
-                </button>
+                </a>
 </div>
 </aside>
 <!-- Main Content Canvas -->

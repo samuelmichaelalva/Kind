@@ -135,43 +135,43 @@
 <!-- Navigation Links -->
 <div class="flex flex-col gap-1 w-full flex-grow">
 <!-- Inactive -->
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="{{ route('dashboard') }}">
 <span class="material-symbols-outlined text-[20px]">dashboard</span>
                 Overview
             </a>
 <!-- Active (Mapped conceptually to Notifications) -->
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary font-semibold transition-transform scale-95 origin-left font-body-sm text-body-sm relative" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary font-semibold transition-transform scale-95 origin-left font-body-sm text-body-sm relative" href="{{ route('notifications') }}">
 <span class="material-symbols-outlined text-[20px] font-variation-settings: 'FILL' 1;">analytics</span>
                 Activity
                 <span class="absolute right-3 top-1/2 -translate-y-1/2 w-2 h-2 bg-error rounded-full"></span>
 </a>
 <!-- Inactive -->
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="{{ route('create-post') }}">
 <span class="material-symbols-outlined text-[20px]">handshake</span>
                 My Requests
             </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="{{ route('browse-donations') }}">
 <span class="material-symbols-outlined text-[20px]">volunteer_activism</span>
                 My Donations
             </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="{{ route('volunteer-hub') }}">
 <span class="material-symbols-outlined text-[20px]">groups</span>
                 Volunteering
             </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm" href="{{ route('messages') }}">
 <span class="material-symbols-outlined text-[20px]">bookmark</span>
                 Saved
             </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm mt-auto" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-all font-body-sm text-body-sm mt-auto" href="{{ route('user-profile') }}">
 <span class="material-symbols-outlined text-[20px]">settings</span>
                 Settings
             </a>
 </div>
 <!-- CTA -->
-<button class="w-full mt-stack-md bg-gradient-to-r from-primary to-tertiary text-on-primary py-3 rounded-[12px] font-title-md text-title-md hover:opacity-90 transition-opacity shadow-sm flex items-center justify-center gap-2">
+<a class="w-full mt-stack-md bg-gradient-to-r from-primary to-tertiary text-on-primary py-3 rounded-[12px] font-title-md text-title-md hover:opacity-90 transition-opacity shadow-sm flex items-center justify-center gap-2" href="{{ route('create-post') }}">
 <span class="material-symbols-outlined text-[18px]">add</span>
             New Request
-        </button>
+        </a>
 </nav>
 <!-- Main Canvas -->
 <main class="flex-1 md:ml-[240px] p-container-padding max-w-[1200px] w-full mx-auto pb-stack-lg">

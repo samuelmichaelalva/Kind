@@ -194,39 +194,39 @@
 <div class="text-body-sm font-body-sm text-on-surface-variant opacity-80">Community Dashboard</div>
 </div>
 <div class="flex-1 overflow-y-auto w-full px-2">
-<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mb-1 group" href="#">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mb-1 group" href="{{ route('dashboard') }}">
 <span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
 <span class="font-body-sm text-body-sm">Overview</span>
 </a>
-<a class="flex items-center gap-3 p-3 bg-primary/10 text-primary font-semibold rounded-lg mb-1 scale-95 transition-transform" href="#">
+<a class="flex items-center gap-3 p-3 bg-primary/10 text-primary font-semibold rounded-lg mb-1 scale-95 transition-transform" href="{{ route('messages') }}">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
 <span class="font-body-sm text-body-sm">Activity</span>
 </a>
-<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mb-1 group" href="#">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mb-1 group" href="{{ route('create-post') }}">
 <span class="material-symbols-outlined group-hover:text-primary transition-colors">handshake</span>
 <span class="font-body-sm text-body-sm">My Requests</span>
 </a>
-<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mb-1 group" href="#">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mb-1 group" href="{{ route('browse-donations') }}">
 <span class="material-symbols-outlined group-hover:text-primary transition-colors">volunteer_activism</span>
 <span class="font-body-sm text-body-sm">My Donations</span>
 </a>
-<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mb-1 group" href="#">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mb-1 group" href="{{ route('volunteer-hub') }}">
 <span class="material-symbols-outlined group-hover:text-primary transition-colors">groups</span>
 <span class="font-body-sm text-body-sm">Volunteering</span>
 </a>
-<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mb-1 group" href="#">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mb-1 group" href="{{ route('messages') }}">
 <span class="material-symbols-outlined group-hover:text-primary transition-colors">bookmark</span>
 <span class="font-body-sm text-body-sm">Saved</span>
 </a>
 </div>
 <div class="p-4 mt-auto w-full">
-<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mb-4 group" href="#">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg mb-4 group" href="{{ route('user-profile') }}">
 <span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
 <span class="font-body-sm text-body-sm">Settings</span>
 </a>
-<button class="w-full bg-gradient-to-r from-primary to-tertiary text-on-primary py-3 rounded-xl font-title-md text-body-sm shadow-md hover:opacity-90 transition-opacity">
+<a class="w-full bg-gradient-to-r from-primary to-tertiary text-on-primary py-3 rounded-xl font-title-md text-body-sm shadow-md hover:opacity-90 transition-opacity block text-center" href="{{ route('create-post') }}">
                 New Request
-            </button>
+            </a>
 </div>
 </nav>
 <!-- Main Content Area -->

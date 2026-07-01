@@ -122,11 +122,11 @@
 <div class="flex items-center gap-stack-md">
 <span class="font-display-lg text-headline-lg font-bold text-primary">Kind</span>
 <div class="flex items-center gap-base">
-<a class="text-primary font-semibold border-b-2 border-primary pb-1 opacity-80 transition-all font-body-lg text-body-lg" href="#">Home</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Requests</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Donations</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Volunteer</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">NGOs</a>
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 opacity-80 transition-all font-body-lg text-body-lg" href="{{ route('dashboard') }}">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="{{ route('create-post') }}">Requests</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="{{ route('browse-donations') }}">Donations</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="{{ route('volunteer-hub') }}">Volunteer</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="{{ route('ngo-directory') }}">NGOs</a>
 </div>
 </div>
 <div class="flex items-center gap-base">
@@ -151,38 +151,38 @@
 <h2 class="font-title-md text-title-md text-on-surface">Community Dashboard</h2>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Kindness in Action</p>
 </div>
-<a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary font-semibold rounded-lg scale-95 transition-transform font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary font-semibold rounded-lg scale-95 transition-transform font-body-sm text-body-sm" href="{{ route('dashboard') }}">
 <span class="material-symbols-outlined">dashboard</span>
                 Overview
             </a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg font-body-sm text-body-sm" href="{{ route('notifications') }}">
 <span class="material-symbols-outlined">analytics</span>
                 Activity
             </a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg font-body-sm text-body-sm" href="{{ route('create-post') }}">
 <span class="material-symbols-outlined">handshake</span>
                 My Requests
             </a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg font-body-sm text-body-sm" href="{{ route('browse-donations') }}">
 <span class="material-symbols-outlined">volunteer_activism</span>
                 My Donations
             </a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg font-body-sm text-body-sm" href="{{ route('volunteer-hub') }}">
 <span class="material-symbols-outlined">groups</span>
                 Volunteering
             </a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg font-body-sm text-body-sm" href="{{ route('messages') }}">
 <span class="material-symbols-outlined">bookmark</span>
                 Saved
             </a>
 <div class="mt-auto pt-4 border-t border-outline-variant/20">
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg font-body-sm text-body-sm" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 transition-all rounded-lg font-body-sm text-body-sm" href="{{ route('user-profile') }}">
 <span class="material-symbols-outlined">settings</span>
                     Settings
                 </a>
-<button class="w-full mt-4 bg-gradient-to-r from-primary to-tertiary text-on-primary font-title-md text-title-md py-3 rounded-lg shadow-sm hover:opacity-90 transition-opacity">
+<a class="w-full mt-4 bg-gradient-to-r from-primary to-tertiary text-on-primary font-title-md text-title-md py-3 rounded-lg shadow-sm hover:opacity-90 transition-opacity block text-center" href="{{ route('create-post') }}">
                     New Request
-                </button>
+                </a>
 </div>
 </aside>
 <!-- Main Content Canvas -->
