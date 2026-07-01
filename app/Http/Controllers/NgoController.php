@@ -9,6 +9,11 @@ use Illuminate\View\View;
 
 class NgoController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Ngo::class, 'ngo');
+    }
+
     public function index(): View
     {
         return view('stitch.ngo-directory', ['ngos' => Ngo::query()->latest()->get()]);

@@ -7,6 +7,14 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\ConversationController;
+use App\Http\Controllers\DonationController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\NgoController;
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\VolunteerOpportunityController;
 use Illuminate\Support\Facades\Route;
 
 $publicPages = [
@@ -91,5 +99,14 @@ Route::middleware('auth')->group(function () {
                 $route->name(str_replace('-', '.', $uri));
             }
         }
+
+        Route::resource('posts', PostController::class)->names('posts');
+        Route::resource('donations', DonationController::class)->names('donations');
+        Route::resource('ngos', NgoController::class)->names('ngos');
+        Route::resource('volunteer-opportunities', VolunteerOpportunityController::class)->names('volunteer-opportunities');
+        Route::resource('conversations', ConversationController::class)->names('conversations');
+        Route::resource('message-threads', MessageController::class)->names('messages');
+        Route::resource('notifications-resource', NotificationController::class)->names('notifications-resource');
+        Route::resource('reports', ReportController::class)->names('reports');
     });
 });

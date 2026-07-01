@@ -9,6 +9,11 @@ use Illuminate\View\View;
 
 class VolunteerOpportunityController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(VolunteerOpportunity::class, 'volunteerOpportunity');
+    }
+
     public function index(): View
     {
         return view('stitch.volunteer-hub', ['volunteerOpportunities' => VolunteerOpportunity::query()->latest()->get()]);

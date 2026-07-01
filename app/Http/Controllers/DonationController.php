@@ -9,6 +9,11 @@ use Illuminate\View\View;
 
 class DonationController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Donation::class, 'donation');
+    }
+
     public function index(): View
     {
         return view('stitch.browse-donations', ['donations' => Donation::query()->latest()->get()]);

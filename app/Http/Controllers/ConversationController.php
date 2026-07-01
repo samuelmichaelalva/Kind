@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreMessageRequest;
 use App\Models\Conversation;
-use App\Models\Message;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class ConversationController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Conversation::class, 'conversation');
+    }
+
     public function index(): View
     {
         return view('stitch.messages', ['conversations' => Conversation::query()->latest()->get()]);
@@ -28,6 +32,6 @@ class ConversationController extends Controller
             'body' => $request->body,
         ]);
 
-        return redirect()->route('messages');
+        return redirect()->route('messages.index');
     }
 }
