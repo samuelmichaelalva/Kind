@@ -30,4 +30,44 @@ class User extends Authenticatable implements MustVerifyEmail
             'password' => 'hashed',
         ];
     }
+
+    public function posts(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function donations(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Donation::class);
+    }
+
+    public function volunteerOpportunities(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(VolunteerOpportunity::class);
+    }
+
+    public function ngos(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Ngo::class);
+    }
+
+    public function conversations(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Conversation::class, 'user_one_id');
+    }
+
+    public function notifications(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(NotificationModel::class);
+    }
+
+    public function reports(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Report::class);
+    }
+
+    public function volunteeredOpportunities(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(VolunteerOpportunity::class)->withTimestamps()->withPivot('status');
+    }
 }
