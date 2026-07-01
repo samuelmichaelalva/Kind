@@ -30,4 +30,28 @@ class VolunteerOpportunityController extends Controller
 
         return redirect()->route('volunteer-hub');
     }
+
+    public function show(VolunteerOpportunity $volunteerOpportunity): RedirectResponse
+    {
+        return redirect()->route('volunteer-hub');
+    }
+
+    public function edit(VolunteerOpportunity $volunteerOpportunity): View
+    {
+        return view('stitch.volunteer-hub', ['volunteerOpportunity' => $volunteerOpportunity]);
+    }
+
+    public function update(StoreVolunteerOpportunityRequest $request, VolunteerOpportunity $volunteerOpportunity): RedirectResponse
+    {
+        $volunteerOpportunity->update($request->validated());
+
+        return redirect()->route('volunteer-hub');
+    }
+
+    public function destroy(VolunteerOpportunity $volunteerOpportunity): RedirectResponse
+    {
+        $volunteerOpportunity->delete();
+
+        return redirect()->route('volunteer-hub');
+    }
 }

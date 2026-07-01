@@ -30,4 +30,28 @@ class NgoController extends Controller
 
         return redirect()->route('ngo-directory');
     }
+
+    public function show(Ngo $ngo): RedirectResponse
+    {
+        return redirect()->route('ngo-directory');
+    }
+
+    public function edit(Ngo $ngo): View
+    {
+        return view('stitch.ngo-directory', ['ngo' => $ngo]);
+    }
+
+    public function update(StoreNgoRequest $request, Ngo $ngo): RedirectResponse
+    {
+        $ngo->update($request->validated());
+
+        return redirect()->route('ngo-directory');
+    }
+
+    public function destroy(Ngo $ngo): RedirectResponse
+    {
+        $ngo->delete();
+
+        return redirect()->route('ngo-directory');
+    }
 }

@@ -62,43 +62,16 @@ Route::middleware('auth')->group(function () {
         ->name('verification.verify');
 
     Route::middleware('verified')->group(function () {
-        $protectedPages = [
-            'home-feed' => 'stitch.home-feed',
-            'volunteer-hub' => 'stitch.volunteer-hub',
-            'user-dashboard' => 'stitch.user-dashboard',
-            'user-profile' => 'stitch.user-profile',
-            'create-post' => 'stitch.create-post',
-            'messages' => 'stitch.messages',
-            'notifications' => 'stitch.notifications',
-            'ngo-directory' => 'stitch.ngo-directory',
-            'admin-dashboard' => 'stitch.admin-dashboard',
-        ];
-
-        foreach ($protectedPages as $uri => $view) {
-            $route = Route::view($uri, $view);
-
-            if ($uri === 'home-feed') {
-                $route->name('dashboard');
-            } elseif ($uri === 'create-post') {
-                $route->name('create-post');
-            } elseif ($uri === 'messages') {
-                $route->name('messages');
-            } elseif ($uri === 'notifications') {
-                $route->name('notifications');
-            } elseif ($uri === 'ngo-directory') {
-                $route->name('ngo-directory');
-            } elseif ($uri === 'volunteer-hub') {
-                $route->name('volunteer-hub');
-            } elseif ($uri === 'user-dashboard') {
-                $route->name('user-dashboard');
-            } elseif ($uri === 'user-profile') {
-                $route->name('user-profile');
-            } elseif ($uri === 'admin-dashboard') {
-                $route->name('admin-dashboard');
-            } else {
-                $route->name(str_replace('-', '.', $uri));
-            }
-        }
+        Route::get('home-feed', [PostController::class, 'index'])->name('dashboard');
+        Route::get('create-post', [PostController::class, 'create'])->name('create-post');
+        Route::get('browse-donations', [DonationController::class, 'index'])->name('browse-donations');
+        Route::get('volunteer-hub', [VolunteerOpportunityController::class, 'index'])->name('volunteer-hub');
+        Route::get('ngo-directory', [NgoController::class, 'index'])->name('ngo-directory');
+        Route::get('messages', fn () => view('stitch.messages'))->name('messages');
+        Route::get('notifications', fn () => view('stitch.notifications'))->name('notifications');
+        Route::get('user-dashboard', fn () => view('stitch.user-dashboard'))->name('user-dashboard');
+        Route::get('user-profile', fn () => view('stitch.user-profile'))->name('user-profile');
+        Route::get('admin-dashboard', fn () => view('stitch.admin-dashboard'))->name('admin-dashboard');
 
         Route::resource('posts', PostController::class)->names('posts');
         Route::resource('donations', DonationController::class)->names('donations');

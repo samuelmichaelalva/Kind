@@ -207,102 +207,33 @@
 </header>
 <!-- Bento Grid for Donations -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter">
-<!-- Card 1 -->
+@forelse($donations as $donation)
 <article class="glass-card rounded-xl overflow-hidden flex flex-col">
 <div class="relative h-48 w-full bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="A high-quality, softly lit photograph of a stack of gently used, high-end hardback books resting on a clean, light wood table. The background is a bright, minimalist modern room with ample natural light. The aesthetic is calm, clean, and organized, focusing on mutual aid and sharing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP2SdtsOl8rFwqDRNAfzo45cBZkoQ06ETN3Zs7dyfCY_foliu0vJILBpFsVAPPWE2QBNkIkyzuQEad0ysN9zuv2s7zlq80ReuDETgW9wdPyj3TwiiccOuM5_HNr8_At3t3wfRV8_Oiujtrsv2dE4S9uPmoTcoV3AqeMiAwwGgGmYVgYNYsiUVImZisSZ9AFjCy3Jy7g8OncAc9Ypyf4WO55TJ6sp3vjSVTJV2w2BIMVjEG6hzcbYFz4Zo6RMdKZ3W6nVjBVHdFhg"/>
+<img class="w-full h-full object-cover" src="{{ $donation->image_path ? asset('storage/'. $donation->image_path) : 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80' }}"/>
 <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
 <span class="w-2 h-2 rounded-full bg-secondary"></span>
-<span class="font-label-caps text-[10px] font-semibold text-on-surface">Available</span>
+<span class="font-label-caps text-[10px] font-semibold text-on-surface">{{ $donation->status?->value ?? 'Available' }}</span>
 </div>
 </div>
 <div class="p-4 flex flex-col flex-1 gap-2">
 <div class="flex justify-between items-start">
-<h3 class="font-title-md text-title-md line-clamp-1">Assorted Hardback Novels</h3>
+<h3 class="font-title-md text-title-md line-clamp-1">{{ $donation->title }}</h3>
 <button class="text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">favorite_border</span></button>
 </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-2">A collection of contemporary fiction and biographies in excellent condition. Great for a community library.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-2">{{ $donation->description }}</p>
 <div class="flex items-center gap-2 mt-auto pt-2 border-t border-outline-variant/20">
 <span class="material-symbols-outlined text-outline text-[16px]">location_on</span>
-<span class="font-body-sm text-[12px] text-on-surface-variant">Downtown Brooklyn</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">{{ $donation->location ?? 'Community pickup' }}</span>
 </div>
-<button class="mt-3 w-full py-2 border border-primary text-primary rounded-lg font-body-sm text-body-sm font-semibold hover:bg-primary/5 transition-colors">
-                                Claim Item
-                            </button>
+<a class="mt-3 w-full py-2 border border-primary text-primary rounded-lg font-body-sm text-body-sm font-semibold hover:bg-primary/5 transition-colors text-center" href="{{ route('donations.edit', $donation) }}">Claim Item</a>
 </div>
 </article>
-<!-- Card 2 -->
-<article class="glass-card rounded-xl overflow-hidden flex flex-col">
-<div class="relative h-48 w-full bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="A clear, bright photograph of a slightly used but clean navy blue winter coat hanging against a plain white background. The lighting is soft and even, highlighting the texture of the fabric. The overall mood is utilitarian and helpful, fitting a clean, minimalist user interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVT3Ax9WBRIEgzmJBfuaQhTMXOjpa3PGa67rGoMdEJIwn8R3J5KUSLeUNltMiNhnXEDL1CjpOaEQ1z1zRCtZ_Rj_lKRzp_dkfrOb5QD3URHZBvcG3QeoPe-ABYlSvkQCYmd_lMYPtk3EJaNOInLI2QgkGwnX5I6xMpabJwi21bhVNOup44ynscMvio7bGQheondpAim85OmLpuPMy8lziGv0xEUyI1N_jGKMj7RDrY65y2uDN9WKIk70F6nCG9cV6eweOPi4dHsg"/>
-<div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-<span class="font-label-caps text-[10px] font-semibold text-on-surface">Available</span>
-</div>
-</div>
-<div class="p-4 flex flex-col flex-1 gap-2">
-<div class="flex justify-between items-start">
-<h3 class="font-title-md text-title-md line-clamp-1">Winter Coat (Size L)</h3>
-<button class="text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">favorite_border</span></button>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-2">Warm, insulated winter coat. Used for one season, washed and ready for a new home.</p>
-<div class="flex items-center gap-2 mt-auto pt-2 border-t border-outline-variant/20">
-<span class="material-symbols-outlined text-outline text-[16px]">location_on</span>
-<span class="font-body-sm text-[12px] text-on-surface-variant">Queens, Astoria</span>
-</div>
-<button class="mt-3 w-full py-2 border border-primary text-primary rounded-lg font-body-sm text-body-sm font-semibold hover:bg-primary/5 transition-colors">
-                                Claim Item
-                            </button>
-</div>
+@empty
+<article class="glass-card rounded-xl overflow-hidden flex flex-col col-span-full p-6">
+<p class="font-body-lg text-body-lg text-on-surface-variant">No donations yet. Share something useful with the community.</p>
 </article>
-<!-- Card 3 -->
-<article class="glass-card rounded-xl overflow-hidden flex flex-col">
-<div class="relative h-48 w-full bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="A well-composed photograph of a sleek, modern wooden coffee table sitting on a light-colored rug in a sunlit, minimalist living space. The wood has a warm tone, contrasting with the bright, airy environment. The aesthetic is clean, premium, and calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtMdWxZEBMxQxWPc9bHxP16ddm6x0iYDdB2944ri6-2hgYJJP5Zd6u_8Pw5xDHtb_aeZJECVKRbuz5kfzuGU2xwWvS_AxB9RY9dwiuPK1b354Iv-aJjo80cFPRj1VN4rNM4_Jf0QYJ3iHkM-601R1IDfefnkkIBHB_u8fT2q_mIX7OUwOoe-mtynrQ0Nc-ZanmaOXjCCij_QdlVXmyneMxknwRgpTZXvfDp8vFIA07-KowEfnaCa7X3sR2TLlOzDnCUGM8Ya9uZA"/>
-<div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-full flex items-center gap-1 shadow-sm opacity-60">
-<span class="w-2 h-2 rounded-full bg-outline"></span>
-<span class="font-label-caps text-[10px] font-semibold text-on-surface">Pending</span>
-</div>
-</div>
-<div class="p-4 flex flex-col flex-1 gap-2 opacity-80">
-<div class="flex justify-between items-start">
-<h3 class="font-title-md text-title-md line-clamp-1">Oak Coffee Table</h3>
-<button class="text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">favorite_border</span></button>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-2">Solid oak coffee table with minor scratches on top. Sturdy and fully functional.</p>
-<div class="flex items-center gap-2 mt-auto pt-2 border-t border-outline-variant/20">
-<span class="material-symbols-outlined text-outline text-[16px]">location_on</span>
-<span class="font-body-sm text-[12px] text-on-surface-variant">Manhattan, East Village</span>
-</div>
-<button class="mt-3 w-full py-2 bg-surface-variant text-on-surface-variant rounded-lg font-body-sm text-body-sm font-semibold cursor-not-allowed">
-                                Claim Pending
-                            </button>
-</div>
-</article>
-<!-- Card 4 -->
-<article class="glass-card rounded-xl overflow-hidden flex flex-col">
-<div class="relative h-48 w-full bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="A crisp, high-resolution photo of a gently used, black standing desk converter placed on a white desk surface. The background is a slightly blurred, modern office setting with bright, natural lighting. The image conveys productivity and clean, organized design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl5bflZXTVHAr4sfu6qknkXfEpyAubNUsDgbH4kf8V6AsPvI6yxtrjVPUAILv8J5ZHNn6BR7bnK2shPfySVxPZuk1V3ziStOzcn61JvVmDId3NM6XcjE4Tr72CekEo8lUQxyCAUheKcpqTpW_dNLSgKVNj3ikvkFFRB-WXtkKItnkE2olbT3W_XbjfLK028MmDLyyG1Zq5f0FLp-1GMISOGW_xm2mycYUWURiP4XXSXjGKj8YaO6qmi4QG2uvB3sYSAECA1SuSZg"/>
-<div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-<span class="font-label-caps text-[10px] font-semibold text-on-surface">Available</span>
-</div>
-</div>
-<div class="p-4 flex flex-col flex-1 gap-2">
-<div class="flex justify-between items-start">
-<h3 class="font-title-md text-title-md line-clamp-1">Standing Desk Converter</h3>
-<button class="text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">favorite_border</span></button>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-2">Adjustable desk riser for a healthier workspace. Excellent working condition.</p>
-<div class="flex items-center gap-2 mt-auto pt-2 border-t border-outline-variant/20">
-<span class="material-symbols-outlined text-outline text-[16px]">location_on</span>
-<span class="font-body-sm text-[12px] text-on-surface-variant">Jersey City</span>
-</div>
-<button class="mt-3 w-full py-2 border border-primary text-primary rounded-lg font-body-sm text-body-sm font-semibold hover:bg-primary/5 transition-colors">
-                                Claim Item
-                            </button>
-</div>
-</article>
+@endforelse
 </div>
 </div>
 </main>
